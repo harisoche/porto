@@ -4,11 +4,18 @@ import { profile } from '../data/profile'
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false)
+  const [secondaryCopied, setSecondaryCopied] = useState(false)
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(profile.email)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  const copySecondaryEmail = async () => {
+    await navigator.clipboard.writeText(profile.secondaryEmail)
+    setSecondaryCopied(true)
+    setTimeout(() => setSecondaryCopied(false), 2000)
   }
 
   return (
@@ -22,7 +29,7 @@ export default function ContactPage() {
         <div className="bg-surface border border-border rounded-lg p-5 flex items-center justify-between gap-4">
           <div>
             <p className="text-text-secondary text-xs uppercase tracking-widest font-mono mb-1">
-              Email
+              Primary Email
             </p>
             <p className="text-text-primary">{profile.email}</p>
           </div>
@@ -31,6 +38,22 @@ export default function ContactPage() {
             className="text-sm px-3 py-1.5 border border-border rounded text-text-secondary hover:text-accent hover:border-accent transition-colors duration-200 shrink-0"
           >
             {copied ? 'Copied!' : 'Copy'}
+          </button>
+        </div>
+
+        {/* Secondary Email */}
+        <div className="bg-surface border border-border rounded-lg p-5 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-text-secondary text-xs uppercase tracking-widest font-mono mb-1">
+              Secondary Email
+            </p>
+            <p className="text-text-primary">{profile.secondaryEmail}</p>
+          </div>
+          <button
+            onClick={copySecondaryEmail}
+            className="text-sm px-3 py-1.5 border border-border rounded text-text-secondary hover:text-accent hover:border-accent transition-colors duration-200 shrink-0"
+          >
+            {secondaryCopied ? 'Copied!' : 'Copy'}
           </button>
         </div>
 
