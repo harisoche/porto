@@ -19,7 +19,7 @@ export default function HomePage() {
       <div className="mb-3 font-mono text-text-secondary text-sm">{'// hello, world'}</div>
 
       <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-3">
-        {profile.name}
+        Haris <span className="text-accent">{profile.nickname}</span> Gumilar
       </h1>
 
       <h2 className="text-xl text-accent font-mono mb-5">{profile.title}</h2>

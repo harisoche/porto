@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-surface border-b border-border">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
         <NavLink to="/" className="font-mono text-accent font-bold text-lg">
-          {'<HG />'}
+          {'<Oche />'}
         </NavLink>
 
         {/* Desktop links */}

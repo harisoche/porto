@@ -1,5 +1,6 @@
 export const profile = {
   name: 'Haris Gumilar',
+  nickname: 'Oche',
   title: 'Senior Backend Engineer',
   summary:
     'Backend Engineer with more than 7 years of experience specializing in Golang, Java, Python, and Laravel. Proven ability to design, develop, and optimize high-performance, scalable backend systems.',
